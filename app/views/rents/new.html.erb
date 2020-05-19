@@ -1,0 +1,7 @@
+<h1>Création Rent</h1>
+<%= simple_form_for(@rent) do |rent| %>
+<%= f.input :start_date, :as => :string, :input_html => { :class => 'date_picker' } %>
+<%= f.button :submit, class: "btn-primary" %>
+
+<% end %>
+

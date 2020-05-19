@@ -14,7 +14,7 @@
         <h2 class="mb-2"><%= moto.address %></h2>
         <h2 class="price"><%= moto.price_per_day %>€</h2>
         <%= link_to "Delete", moto_path(moto), 
-        method: :delete, 
+        method: :delete,
         data: { confirm: "Are you sure?" } %>
       </div>
     </div>

@@ -20,13 +20,12 @@ class MotosController < ApplicationController
     else
       render :new
     end
+  end
 
-    def destroy
-      @moto = Moto.find(params[:id])
-      @moto.destroy
-      redirect_to motos_path
-    end
-
+  def destroy
+    @moto = Moto.find(params[:id])
+    @moto.destroy
+    redirect_to motos_path
   end
 
   private

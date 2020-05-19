@@ -1,8 +1,11 @@
 <h1>Motos#new</h1>
 <%= simple_form_for [@user, @moto] do |f| %>
   <%= f.input :brand %>
+  <%= f.input :address %>
+  <%= f.input :price_per_day %>
   <%= f.input :model %>
   <%= f.submit "submit", class: "btn btn-primary"%>
 <% end %>
+
 
 

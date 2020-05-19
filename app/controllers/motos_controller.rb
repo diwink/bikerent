@@ -26,6 +26,6 @@ class MotosController < ApplicationController
   private
 
   def moto_params
-    params.require(:moto).permit(:brand, :model)
+    params.require(:moto).permit(:brand, :model, :address, :price_per_day)
   end
 end

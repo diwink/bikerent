@@ -4,7 +4,11 @@
   <div class="col-lg-6 col-sm-8">
     <% @motos.each do |moto| %>
       <div class="card-moto mt-3">
-        <%= cl_image_tag('l4vcwrgng7a0xkpmyowm', crop: :fill) %>
+        <% if moto.photo.attached? %>
+          <%= cl_image_tag moto.photo.key %>
+        <% else %>
+          <p>No pic!</p>
+        <% end %>
     <div class="card-moto-infos d-flex flex-grow-1 justify-content-between">
       <div>
         <h2><%= link_to moto.brand, moto_path(moto) %></h2>
@@ -23,3 +27,6 @@
     <%= link_to "Create a moto", new_moto_path %>
   </div>
 </div>
+
+
+

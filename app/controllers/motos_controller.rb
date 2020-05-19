@@ -14,7 +14,9 @@ class MotosController < ApplicationController
   end
 
   def create
-    @moto = current_user.motos.create!(moto_params)
+    # @photo = Cloudinary::Uploader.upload(params[:photo])
+    @moto = Moto.new(moto_params)
+    @moto.user = current_user
     if @moto.save
       redirect_to moto_path(@moto)
     else
@@ -31,6 +33,6 @@ class MotosController < ApplicationController
   private
 
   def moto_params
-    params.require(:moto).permit(:brand, :model, :address, :price_per_day)
+    params.require(:moto).permit(:brand, :model, :address, :price_per_day, :photo)
   end
 end

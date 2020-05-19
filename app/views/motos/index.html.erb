@@ -1,4 +1,25 @@
-<h1>Motos#index</h1>
-<% @motos.each do |moto| %>
-  <li> <%= link_to moto.brand, moto_path(moto) %> <%= moto.model %></li>
-<% end %>
+<h1>Motos</h1>
+
+<div class="row">
+  <div class="col-lg-6 col-sm-8">
+    <% @motos.each do |moto| %>
+      <div class="card-moto mt-3">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-moto-infos d-flex flex-grow-1 justify-content-between">
+      <div>
+        <h2><%= link_to moto.brand, moto_path(moto) %></h2>
+        <p><%= moto.model %></p>
+      </div>
+      <div>
+        <h2 class="mb-2"><%= moto.address %></h2>
+        <h2 class="price"><%= moto.price_per_day %>€</h2>
+        <%= link_to "Delete", moto_path(moto), 
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
+      </div>
+    </div>
+      </div>
+    <% end %>
+    <%= link_to "Create a moto", new_moto_path %>
+  </div>
+</div>

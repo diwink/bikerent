@@ -14,7 +14,9 @@ class RentsController < ApplicationController
     @rent = Rent.new(rent_params)
     @rent.moto = Moto.find(params[:moto_id])
     @rent.user = current_user
+    @rent.status = "Pending request"
     if @rent.save
+      flash.notice = "#{@rent.moto.brand} booked !"
       redirect_to rents_path
     else
       render :new
@@ -23,9 +25,11 @@ class RentsController < ApplicationController
 
   private
 
-  def total_price
-    @rent_days = rent.end_date - rent.start_date
-  end
+  # def total_price
+  #   @rent_days = (rent.end_date - rent.start_date) + 1 
+  #   @price_per_day = rent.moto.price_per_day
+  #   @total_price = @rent_days * @price_per_day
+  # end
 
   def rent_params
     params.require(:rent).permit(:moto_id, :start_date, :end_date)

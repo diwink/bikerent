@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-between">
   <div>
-    <div class=>
-      <div class="d-flex">
+    <div>
+      <div class="d-flex mt-3">
         <div class="">
           <div class="brand">
             <h2><%= @moto.brand%> <%= @moto.model%></h2>
@@ -14,8 +14,9 @@
         <% end %>
           </div>
         </div>
-        <div class="map flex-grow-1">
-          <h2>A map !!!!!!!!!!!</h2>
+        <div class="map flex-grow-1 ml-2">
+          <h2>A wonderfull map ! Here you can see where the motorcycle is located! Thx Geocoding 🌎!
+          BTW, thx Philippine for the lesson !</h2>
         </div>
       </div>
       <div class="description">
@@ -25,16 +26,16 @@
 
    </div>
 
-  <div class="">
-    <div class="profil">
+  <div class="book-info mt-3 ml-1">
+    <div class="profil m-3 text-center">
       <h2>Renter Profil</h2>
     </div>
-    <div class="mx-auto" style="width: 200px;">
-      <%= link_to "Book Now !", new_moto_rent_path(@moto), class:"btn btn-primary "  %>
+    <div class="mx-auto text-center" style="width: 200px;">
+      <%= link_to "Book Now !", new_moto_rent_path(@moto), class:"btn btn-primary m-3 "  %>
     </div>
   </div>
 
 </div>
 
 
-<%= link_to "Back to all Motos", motos_path %>
+<%= link_to "Back to available Motos", motos_path %>

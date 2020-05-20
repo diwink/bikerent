@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="description">
-      <h2>A description</h2>
+      <h2><%= @moto.description%></h2>
       </div>
     </div>
 
@@ -26,7 +26,7 @@
       <h2>Profil</h2>
     </div>
     <div class="booking">
-      <h2>Booking BTN</h2>
+      <%= link_to "Book Now !", new_moto_rent_path(@moto)  %>
     </div>
   </div>
 

@@ -1,2 +1,36 @@
-<h1><%= @moto.brand %></h1>
+<div class="d-flex justify-content-between">
+  <div>
+    <div class=>
+      <div class="d-flex">
+        <div class="">
+          <div class="brand">
+            <h2><%= @moto.brand%> <%= @moto.model%></h2>
+          </div>
+          <div class="photo">
+            <h2><%= cl_image_tag @moto.photo.key %></h2>
+          </div>
+        </div>
+        <div class="map flex-grow-1">
+          <h2>A map !!!!!!!!!!!</h2>
+        </div>
+      </div>
+      <div class="description">
+      <h2><%= @moto.description%></h2>
+      </div>
+    </div>
+
+   </div>
+
+  <div class="">
+    <div class="profil">
+      <h2>Profil</h2>
+    </div>
+    <div class="booking">
+      <%= link_to "Book Now !", new_moto_rent_path(@moto)  %>
+    </div>
+  </div>
+
+</div>
+
+
 <%= link_to "Back", motos_path %>

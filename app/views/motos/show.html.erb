@@ -7,7 +7,11 @@
             <h2><%= @moto.brand%> <%= @moto.model%></h2>
           </div>
           <div class="photo">
-            <h2><%= cl_image_tag @moto.photo.key %></h2>
+            <% if @moto.photo.attached? %>
+          <%= cl_image_tag @moto.photo.key %>
+        <% else %>
+          <p>No pic!</p>
+        <% end %>
           </div>
         </div>
         <div class="map flex-grow-1">

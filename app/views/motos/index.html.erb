@@ -9,22 +9,18 @@
         <% else %>
           <p>No pic!</p>
         <% end %>
-    <div class="card-moto-infos d-flex flex-grow-1 justify-content-between">
-      <div>
-        <h2><%= link_to moto.brand, moto_path(moto) %></h2>
-        <p><%= moto.model %></p>
-      </div>
-      <div>
-        <h2 class="mb-2"><%= moto.address %></h2>
-        <h2 class="price"><%= moto.price_per_day %>€</h2>
-        <%= link_to "Delete", moto_path(moto),
-        method: :delete,
-        data: { confirm: "Are you sure?" } %>
-      </div>
+        <div class="card-moto-infos d-flex flex-grow-1 justify-content-between">
+          <div>
+            <h2><%= link_to moto.brand, moto_path(moto) %></h2>
+             <p><%= moto.model %></p>
+          </div>
+    <div>
+      <h2 class="mb-2"><%= moto.address %></h2>
+      <h2 class="price"><%= moto.price_per_day %>€</h2>
+    </div>
     </div>
       </div>
     <% end %>
-    <%= link_to "Rent my Motorcycle", new_moto_path, class:"btn btn-primary mt-3" %>
   </div>
 </div>
 

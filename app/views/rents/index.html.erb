@@ -1,0 +1,34 @@
+<h1>my rents</h1>
+
+<p><%= current_user.email %></p>
+
+<div class="row">
+  <div class="col-sm-12 col-md-6">
+    <table class="table table-bordered">
+      <tbody>
+        <thead>
+          <th>photo</th>
+           <th>description</th>
+           <th>dates</th>
+           <th>price</th>
+           <th>status</th>
+        </thead>
+        <% @user_rents.each do |rent| %>
+        <tr>
+          <td>
+            <% if rent.moto.photo.attached? %>
+              <%= cl_image_tag rent.moto.photo.key %>
+            <% else %>
+              <p>No pic!</p>
+            <% end %>
+          </td>
+          <td><%= rent.moto.brand %> <%= rent.moto.model %></td>
+          <td><%= rent.start_date %> | <%= rent.end_date %></td>
+          <td><%= rent.moto.price_per_day %></td>
+          <td><%= rent.status %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

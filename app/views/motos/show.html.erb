@@ -8,7 +8,7 @@
           </div>
           <div class="photo">
             <% if @moto.photo.attached? %>
-          <%= cl_image_tag @moto.photo.key %>
+          <%= cl_image_tag @moto.photo.key, width: 400, height: 300, crop: :fill %>
         <% else %>
           <p>No pic!</p>
         <% end %>
@@ -27,14 +27,14 @@
 
   <div class="">
     <div class="profil">
-      <h2>Profil</h2>
+      <h2>Renter Profil</h2>
     </div>
-    <div class="booking">
-      <%= link_to "Book Now !", new_moto_rent_path(@moto)  %>
+    <div class="mx-auto" style="width: 200px;">
+      <%= link_to "Book Now !", new_moto_rent_path(@moto), class:"btn btn-primary "  %>
     </div>
   </div>
 
 </div>
 
 
-<%= link_to "Back", motos_path %>
+<%= link_to "Back to all Motos", motos_path %>

@@ -1,23 +1,30 @@
 .brand {
-  background-color: grey;
+  background-color: none;
 }
 
 .map {
-  background-color: red;
+  background-color: none;
 }
 
 .photo {
-  background-color: blue;
+  background-color: none;
 }
 
 .description {
-  background-color: green;
+  background-color: none;
 }
 
 .profil{
-  background-color: purple;
+  background-color: none;
 }
 
 .booking{
-  background-color: orange;
+  background-color: none;
+}
+
+.map {
+  border: 1px solid;
+}
+
+.book-info {
 }

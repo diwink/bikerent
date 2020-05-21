@@ -1,0 +1,5 @@
+<%= simple_form_for [@moto, @rent] do |f| %>
+<%= f.input :start_date, as: :string, input_html: {id: "range_start"}%>
+<%= f.input :end_date, as: :string, input_html: {id: "range_end"} %>
+<%= f.button :submit, "Book it now!", class: "btn-primary" %>
+<% end %>

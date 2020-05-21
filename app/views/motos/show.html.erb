@@ -1,43 +1,40 @@
 <div class="show-container">
-<div class="d-flex justify-content-between">
-  <div>
-    <div>
-      <div class="d-flex mt-3">
-        <div class="">
-          <div class="brand">
-            <h2><%= @moto.brand%> <%= @moto.model%></h2>
-          </div>
-          <div class="photo">
+
+  <div class="row justify-content-between">
+
+          <div class="col">
+           <p class="brand-tag"><%= @moto.brand%> <%= @moto.model%></p>
+           <p class="price-tag"><%= @moto.price_per_day%> €/day</p>
             <% if @moto.photo.attached? %>
-          <%= cl_image_tag @moto.photo.key, width: 400, height: 300, crop: :fill %>
-        <% else %>
-          <p>No pic!</p>
-        <% end %>
+              <%= cl_image_tag @moto.photo.key, crop: :fill, class: "show-photo" %>
+            <% else %>
+              <p>No pic!</p>
+            <% end %>
+            <p><%= @moto.description%></p>
+            <%= link_to "Back to available Motos", motos_path, class: "btn btn-outline-primary" %>
           </div>
-        </div>
-        <div class="map flex-grow-1 ml-2">
-          <h2>A wonderfull map ! Here you can see where the motorcycle is located! Thx Geocoding 🌎!
-          BTW, thx Philippine for the lesson !</h2>
+
+          <div class="col">
+            <div id="map"
+                style="width: 400px; height: 300px;"
+                data-markers="<%= @markers.to_json %>"
+                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+            </div>
+          </div>
+
+    <div class="book-info col mt-3">
+
+      <div class="profil">
+        <h2>Renter Profile</h2>
+      </div>
+
+      <div class="mx-auto">
+        <div class="rent-form-container">
+          <%= render 'rents/new' %>
         </div>
       </div>
-      <div class="description">
-      <h2><%= @moto.description%></h2>
-      </div>
-    </div>
 
-   </div>
-
-  <div class="book-info mt-3 ml-1">
-    <div class="profil m-3 text-center">
-      <h2>Renter Profil</h2>
-    </div>
-    <div class="mx-auto text-center" style="width: 200px;">
-      <%= link_to "Book Now !", new_moto_rent_path(@moto), class:"btn btn-primary m-3 "  %>
     </div>
   </div>
 
 </div>
-</div>
-
-
-<%= link_to "Back to available Motos", motos_path %>

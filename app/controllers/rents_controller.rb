@@ -55,5 +55,4 @@ class RentsController < ApplicationController
   def rent_params
     params.require(:rent).permit(:moto_id, :start_date, :end_date, :status)
   end
-
 end

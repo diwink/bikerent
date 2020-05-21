@@ -1,16 +1,18 @@
-.card-moto a {
+
+a {
   text-decoration: none;
-  color: white;
+  color: black;
   opacity: 0.6;
     &:hover {
       opacity: 1;
+      text-decoration: none;
     }
 }
 
 .card-moto {
   overflow: hidden;
   height: 120px;
-  background: #aeacc7;
+  background: #fff;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
@@ -19,7 +21,7 @@
 
   .card-moto img {
   height: 100%;
-  width: 120px;
+  width: 17%;
   object-fit: cover;
 }
 
@@ -27,6 +29,7 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  padding-bottom: 10px;
 }
 
   .card-moto p {
@@ -38,7 +41,7 @@
 }
 
   .card-moto .card-moto-infos {
-  padding: 16px;
+  padding: 0 50px;
 }
 
 .card-moto .price {

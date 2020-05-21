@@ -1,0 +1,47 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  height: 600px;
+  margin-bottom: 50px;
+  text-align: center;
+  }
+  
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+  
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-flat {
+  background-color: #7ae08b;
+  padding: 10px;
+  border-radius: 13px;
+  margin-top: 15px;
+  margin-right: 20px;
+  opacity: 0.8;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  width: 140px;
+  height: 56px;
+}
+
+.btn-flat:hover {
+  opacity: 1;
+}

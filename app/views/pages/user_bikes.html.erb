@@ -38,13 +38,17 @@
                 <td class="align-middle"><%= rent.start_date %> | <%= rent.end_date %> <br> <%= ((rent.end_date - rent.start_date)+ 1).to_s.delete_suffix("/1") %> days</td>
                 <td class="align-middle"><%= (((rent.end_date - rent.start_date)+ 1) * rent.moto.price_per_day).to_s.delete_suffix("/1") %>€</td>
                 <% if rent.status == "Pending request" %>
-                  <td>
-                  <%= link_to "Approve", approve_rent_path(rent), 
-                  method: :patch, 
-                  remote: true %>
-                  <%= link_to "Reject", reject_rent_path(rent), 
-                  method: :patch, 
-                  remote: true %>
+                  <td class="d-flex">
+                    <div class="green-btn">
+                      <%= link_to "Approve", approve_rent_path(rent), 
+                      method: :patch, 
+                      remote: true %>
+                    </div>
+                    <div class="red-btn">
+                      <%= link_to "Reject", reject_rent_path(rent), 
+                      method: :patch, 
+                      remote: true %>
+                    </div>
                   </td>
                 <% else %>
                   <td><%= rent.status %></td>

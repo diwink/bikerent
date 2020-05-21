@@ -23,8 +23,8 @@
             <% end %>
           </td>
           <td class="align-middle"><%= rent.moto.brand %> <%= rent.moto.model %></td>
-          <td class="align-middle"><%= rent.start_date %> | <%= rent.end_date %> <br> <%= ((rent.end_date - rent.start_date)+ 1).to_s.tr('', '') %> days</td>
-          <td class="align-middle"><%= (((rent.end_date - rent.start_date)+ 1) * rent.moto.price_per_day).to_s.tr('', '') %>€</td>
+          <td class="align-middle"><%= rent.start_date %> | <%= rent.end_date %> <br> <%= ((rent.end_date - rent.start_date)+ 1).to_s.delete_suffix("/1") %> days</td>
+          <td class="align-middle"><%= (((rent.end_date - rent.start_date)+ 1) * rent.moto.price_per_day).to_s.delete_suffix("/1") %>€</td>
           <td class="align-middle"><%= rent.status %></td>
         </tr>
         <% end %>

@@ -2,7 +2,15 @@ class MotosController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @motos = Moto.all
+    @motos = Moto.geocoded
+    @markers = @motos.map do |moto|
+      {
+        lat: moto.latitude,
+        lng: moto.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { moto: moto }),
+        image_url: helpers.asset_url('marker.jpg')
+      }
+    end
   end
 
   def show

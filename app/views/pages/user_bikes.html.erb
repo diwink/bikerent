@@ -22,8 +22,12 @@
               <h2 class="mb-2"><%= moto.address %></h2>
               <h2 class="price"><%= moto.price_per_day %>€</h2>
             </div>
+            <div>
+              <h2><%= link_to "Delete", motos_path(moto), method: :delete, remote: true %></h2>
+            </div>
           </div>
         </div>
+
         <table class="table table-bordered">
           <tbody>
             <thead>

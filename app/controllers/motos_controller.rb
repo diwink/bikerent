@@ -35,7 +35,7 @@ class MotosController < ApplicationController
   def destroy
     @moto = Moto.find(params[:id])
     @moto.destroy
-    redirect_to motos_path
+    redirect_to user_bikes_url
   end
 
   private

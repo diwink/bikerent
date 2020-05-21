@@ -36,6 +36,20 @@ class RentsController < ApplicationController
     end
   end
 
+  def approve
+    @rent = Rent.find(params[:id])
+    @rent.status = "Approved"
+    @rent.save
+    redirect_to user_bikes_url
+  end
+
+  def reject
+    @rent = Rent.find(params[:id])
+    @rent.status = "Rejected"
+    @rent.save
+    redirect_to user_bikes_url
+  end
+
   private
 
   def rent_params

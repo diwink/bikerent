@@ -1,0 +1,68 @@
+<div class="container">
+  <h1>My bikes</h1>
+  <%= link_to "Rent a new bike", new_moto_path, class:"btn btn-primary" %>
+<br>
+
+<div class="d-flex">
+  <div class="row">
+    <div class="col-lg-10 col-sm-8">
+      <% current_user.motos.each do |moto| %>
+        <div class="card-moto mt-3">
+          <% if moto.photo.attached? %>
+            <%= cl_image_tag moto.photo.key %>
+          <% else %>
+            <p>No pic!</p>
+          <% end %>
+          <div class="card-moto-infos d-flex flex-grow-1 justify-content-between">
+            <div>
+              <h2><%= moto.brand %></h2>
+              <h2><%= moto.model %></h2>
+            </div>
+            <div>
+              <h2 class="mb-2"><%= moto.address %></h2>
+              <h2 class="price"><%= moto.price_per_day %>€</h2>
+            </div>
+            <div>
+              <h2><%= link_to "Delete", motos_path(moto), method: :delete, remote: true %></h2>
+            </div>
+          </div>
+        </div>
+
+        <table class="table table-bordered">
+          <tbody>
+            <thead>
+              <th>Tenant</th>
+              <th>Dates</th>
+              <th>Total price</th>
+              <th>Status</th>
+            </thead>
+            <% moto.rents.each do |rent| %>
+              <tr>
+                <td class="align-middle"> <%= rent.user.email %> </td>
+                <td class="align-middle"><%= rent.start_date %> | <%= rent.end_date %> <br> <%= ((rent.end_date - rent.start_date)+ 1).to_s.delete_suffix("/1") %> days</td>
+                <td class="align-middle"><%= (((rent.end_date - rent.start_date)+ 1) * rent.moto.price_per_day).to_s.delete_suffix("/1") %>€</td>
+                <% if rent.status == "Pending request" %>
+                  <td class="d-flex">
+                    <div class="green-btn">
+                      <%= link_to "Approve", approve_rent_path(rent), 
+                      method: :patch, 
+                      remote: true %>
+                    </div>
+                    <div class="red-btn">
+                      <%= link_to "Reject", reject_rent_path(rent), 
+                      method: :patch, 
+                      remote: true %>
+                    </div>
+                  </td>
+                <% else %>
+                  <td><%= rent.status %></td>
+                <% end %>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</div>
+

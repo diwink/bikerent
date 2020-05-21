@@ -1,19 +1,19 @@
 <%= render 'shared/banner' %>
-  <div class="show-container">
-<h1>Find your Favourite Motorcycle</h1>
+<div class="show-container">
+  <h1>Find your Favourite Motorcycle</h1>
 
-<div class="d-flex">
-  <div class="row">
-    <div class="col-lg-10 col-sm-8">
-      <% @motos.each do |moto| %>
-      <%= link_to moto_path(moto) do %>
-        <div class="card-moto mt-3">
-          <% if moto.photo.attached? %>
-            <%= cl_image_tag moto.photo.key %>
-          <% else %>
-            <p>No pic!</p>
-          <% end %>
-          <div class="card-moto-infos d-flex flex-grow-1 justify-content-between">
+  <div class="d-flex">
+    <div class="row">
+      <div class="col-lg-10 col-sm-8">
+        <% @motos.each do |moto| %>
+          <%= link_to moto_path(moto) do %>
+            <div class="card-moto mt-3">
+              <% if moto.photo.attached? %>
+                <%= cl_image_tag moto.photo.key %>
+              <% else %>
+                <p>No pic!</p>
+              <% end %>
+              <div class="card-moto-infos d-flex flex-grow-1 justify-content-between">
             <div>
               <h2 ><%= moto.brand %></h2>
               <h2 ><%= moto.model %></h2>

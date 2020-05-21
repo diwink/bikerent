@@ -1,0 +1,19 @@
+<h1>User Bikes</h1>
+
+<%= link_to "Rent your bike", new_moto_path %>
+
+
+<% current_user.motos.each do |moto| %>
+  <%= moto.brand %>
+  <% moto.rents.each do |rent| %>
+    <%= rent.status %>
+    <%= rent.user.email %>
+    <%= rent.start_date %>
+    <%= rent.end_date %>
+    <%= simple_form_for [moto, rent] do |f| %>
+      <%= f.input :status %>
+      <%= f.submit "submit", class: "btn btn-primary"%>
+    <% end %>
+  <% end %>
+<% end %>
+

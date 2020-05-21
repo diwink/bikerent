@@ -15,6 +15,13 @@ class MotosController < ApplicationController
 
   def show
     @moto = Moto.find(params[:id])
+    @markers = [{
+        lat: @moto.latitude,
+        lng: @moto.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { moto: @moto }),
+        image_url: helpers.asset_url('marker.jpg')
+      }]
+    @rent = Rent.new
   end
 
   def new

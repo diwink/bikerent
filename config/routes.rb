@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   devise_for :users #, only: [:new, :create]
     # resources :motos, except: [:index, :show]
   resources :motos do
-    resources :rents, only: [:new, :create]
+    resources :rents, only: [:new, :create, :edit, :update]
   end
   resources :rents, only: [:index]
+  get "/user_bikes", to: "pages#user_bikes"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

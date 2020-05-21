@@ -23,16 +23,29 @@ class RentsController < ApplicationController
     end
   end
 
+  # moto_rent PATCH  /motos/:moto_id/rents/:id(.:format)
+  def update
+    @rent = Rent.find (params[:id])
+    @rent.update(rent_params)
+    if @rent.save
+      flash.notice = "status updated!"
+      redirect_to user_bikes_url
+    else
+      flash.alert = "status not updated!"
+      redirect_to user_bikes_url
+    end
+  end
+
   private
 
   # def total_price
-  #   @rent_days = (rent.end_date - rent.start_date) + 1 
+  #   @rent_days = (rent.end_date - rent.start_date) + 1
   #   @price_per_day = rent.moto.price_per_day
   #   @total_price = @rent_days * @price_per_day
   # end
 
   def rent_params
-    params.require(:rent).permit(:moto_id, :start_date, :end_date)
+    params.require(:rent).permit(:moto_id, :start_date, :end_date, :status)
   end
 
   # def find_moto

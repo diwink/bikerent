@@ -36,6 +36,7 @@ gem 'geocoder'
 # user devise install
 gem 'devise'
 gem 'cloudinary', '~> 1.12.0'
+gem 'omniauth-google-oauth2'
 
 # cloudinary
 gem 'dotenv-rails', groups: [:development, :test]

@@ -10,6 +10,13 @@ Devise.setup do |config|
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '81fcbca8e4d5ee2d47474b3c93556dc290b4f13c0b3b8b42dbe1ba0b77c912723a6f71fedf9575c82a7e99de169dfba99f6203383ba3eaef8a0b9aaa643e3509'
 
+  #config based on LeWagon Facebook OmniAuth config
+  config.omniauth :google_oauth2, ENV["GOOGLE_ID"], ENV["GOOGLE_SECRET"],
+    scope: 'email',
+    info_fields: 'email, first_name, last_name',
+    image_size: 'square',  # 50x50, guaranteed ratio
+    secure_image_url: true
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'

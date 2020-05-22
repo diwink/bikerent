@@ -6,7 +6,7 @@
 <div class="d-flex">
   <div class="row">
     <div class="col-lg-10 col-sm-8">
-      <% current_user.motos.each do |moto| %>
+      <% current_user.motos.order("id DESC").each do |moto| %>
         <div class="card-moto mt-3">
           <% if moto.photo.attached? %>
             <%= cl_image_tag moto.photo.key %>

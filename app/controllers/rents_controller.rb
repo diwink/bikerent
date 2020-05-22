@@ -2,7 +2,7 @@ class RentsController < ApplicationController
   # before_action :find_moto, only [ :new ]
 
   def index
-    @user_rents = current_user.rents
+    @user_rents = current_user.rents.order("id DESC")
   end
 
   def new

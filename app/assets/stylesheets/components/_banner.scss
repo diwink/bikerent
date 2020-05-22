@@ -2,8 +2,8 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
-  height: 600px;
-  margin-bottom: 50px;
+  height: 92vh;
+  margin-bottom: 75px;
   text-align: center;
   }
   
@@ -25,15 +25,14 @@
 
 .btns {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .btn-flat {
   background-color: #7ae08b;
   padding: 10px;
   border-radius: 13px;
-  margin-top: 24px;
-  margin-right: 20px;
+  margin-top: 100px;
   opacity: 0.8;
   color: white;
   font-weight: bold;
@@ -45,4 +44,8 @@
 .btn-flat:hover {
   opacity: 1;
   color: white;
+}
+
+.btns li {
+  list-style: none;
 }

@@ -1,9 +1,9 @@
 <div class="container">
-  <h1>My bikes</h1>
-  <div>
-  <%= image_tag current_user.google_picture_url, class: "avatar-bordered" %>
-  <p>Your information: <%= user.first_name %> <%= user.last_name %> </p>
-  </div>
+  <h1>Your bikes</h1>
+  <%= image_tag current_user.google_picture_url, class: "avatar-large" %>
+  <p>Profile: <%= current_user.first_name %> <%= current_user.last_name %> </p>
+
+  <br>
   <%= link_to "Add a bike", new_moto_path, class:"btn btn-primary" %>
 <br>
 

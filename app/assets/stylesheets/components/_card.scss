@@ -1,4 +1,3 @@
-
 a {
   text-decoration: none;
   color: black;
@@ -8,7 +7,6 @@ a {
       text-decoration: none;
     }
 }
-
 .card-moto {
   overflow: hidden;
   height: 120px;
@@ -18,20 +16,17 @@ a {
   align-items: center;
   border-radius: 4px;
 }
-
   .card-moto img {
   height: 100%;
-  width: 17%;
-  object-fit: cover;
+  width: 25%;
+  object-fit: center;
 }
-
   .card-moto h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
   padding-bottom: 10px;
 }
-
   .card-moto p {
   font-size: 12px;
   line-height: 1.4;
@@ -39,11 +34,9 @@ a {
   margin-bottom: 0;
   margin-top: 8px;
 }
-
   .card-moto .card-moto-infos {
   padding: 0 50px;
 }
-
 .card-moto .price {
   font-weight: lighter;
   text-align: right;

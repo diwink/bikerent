@@ -3,8 +3,8 @@
   <div class="row justify-content-between mt-3">
 
           <div class="col">
-           <p class="brand-tag"><%= @moto.brand%> <%= @moto.model%></p>
-           <p class="price-tag"><%= @moto.price_per_day%> €/day</p>
+              <p class="brand-tag"><%= @moto.brand%> <%= @moto.model%></p>
+              <p class="price-tag"><%= @moto.price_per_day%> €/day</p>
             <% if @moto.photo.attached? %>
               <%= cl_image_tag @moto.photo.key, crop: :fill, class: "show-photo" %>
             <% else %>

@@ -1,34 +1,38 @@
-<h1>my rents</h1>
+<div class="container">
+  <h1>my rents</h1>
 
 <p><%= current_user.email %></p>
 
-<div class="row">
-  <div class="col-sm-12 col-md-8">
-    <table class="table table-bordered">
-      <tbody>
-        <thead>
-          <th>Photo</th>
-           <th>Description</th>
-           <th>Dates</th>
-           <th>Total price</th>
-           <th>Status</th>
-        </thead>
-        <% @user_rents.each do |rent| %>
-        <tr>
-          <td class="align-middle">
-            <% if rent.moto.photo.attached? %>
-              <%= cl_image_tag rent.moto.photo.key, style:"width: 200px; height: 150px;" %>
-            <% else %>
-              <p>No pic!</p>
-            <% end %>
-          </td>
-          <td class="align-middle"><%= rent.moto.brand %> <%= rent.moto.model %></td>
-          <td class="align-middle"><%= rent.start_date %> | <%= rent.end_date %> <br> <%= ((rent.end_date - rent.start_date)+ 1).to_s.delete_suffix("/1") %> days</td>
-          <td class="align-middle"><%= (((rent.end_date - rent.start_date)+ 1) * rent.moto.price_per_day).to_s.delete_suffix("/1") %>€</td>
-          <td class="align-middle"><%= rent.status %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
+  <div class="row">
+    <div class="col-sm-12 col-md-8">
+      <table class="table table-bordered">
+        <tbody>
+          <thead>
+            <th>Photo</th>
+             <th>Description</th>
+             <th>Dates</th>
+             <th>Total price</th>
+             <th>Status</th>
+          </thead>
+          <% @user_rents.each do |rent| %>
+          <tr>
+            <td class="align-middle">
+              <% if rent.moto.photo.attached? %>
+                <%= cl_image_tag rent.moto.photo.key, style:"width: 200px; height: 150px;" %>
+              <% else %>
+                <p>No pic!</p>
+              <% end %>
+            </td>
+            <td class="align-middle"><%= rent.moto.brand %> <%= rent.moto.model %></td>
+            <td class="align-middle"><%= rent.start_date %> | <%= rent.end_date %> <br> <%= ((rent.end_date - rent.start_date)+ 1).to_s.delete_suffix("/1") %> days</td>
+            <td class="align-middle"><%= (((rent.end_date - rent.start_date)+ 1) * rent.moto.price_per_day).to_s.delete_suffix("/1") %>€</td>
+            <td class="align-middle"><%= rent.status %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
+
 </div>
+

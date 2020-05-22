@@ -1,6 +1,10 @@
 <div class="container">
   <h1>My bikes</h1>
-  <%= link_to "Rent a new bike", new_moto_path, class:"btn btn-primary" %>
+  <div>
+  <%= image_tag current_user.google_picture_url, class: "avatar-bordered" %>
+  <p>Your information: <%= user.first_name %> <%= user.last_name %> </p>
+  </div>
+  <%= link_to "Add a bike", new_moto_path, class:"btn btn-primary" %>
 <br>
 
 <div class="d-flex">
@@ -44,13 +48,13 @@
                 <% if rent.status == "Pending request" %>
                   <td class="d-flex">
                     <div class="green-btn">
-                      <%= link_to "Approve", approve_rent_path(rent), 
-                      method: :patch, 
+                      <%= link_to "Approve", approve_rent_path(rent),
+                      method: :patch,
                       remote: true %>
                     </div>
                     <div class="red-btn">
-                      <%= link_to "Reject", reject_rent_path(rent), 
-                      method: :patch, 
+                      <%= link_to "Reject", reject_rent_path(rent),
+                      method: :patch,
                       remote: true %>
                     </div>
                   </td>

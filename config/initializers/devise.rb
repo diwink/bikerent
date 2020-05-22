@@ -12,7 +12,7 @@ Devise.setup do |config|
 
   #config based on LeWagon Facebook OmniAuth config
   config.omniauth :google_oauth2, ENV["GOOGLE_ID"], ENV["GOOGLE_SECRET"],
-    scope: 'email',
+    scope: 'email, profile',
     info_fields: 'email, first_name, last_name',
     image_size: 'square',  # 50x50, guaranteed ratio
     secure_image_url: true

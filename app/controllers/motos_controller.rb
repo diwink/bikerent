@@ -2,7 +2,7 @@ class MotosController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @motos = Moto.geocoded
+    @motos = Moto.geocoded.order("id DESC")
     @markers = @motos.map do |moto|
       {
         lat: moto.latitude,
@@ -33,7 +33,7 @@ class MotosController < ApplicationController
     @moto = Moto.new(moto_params)
     @moto.user = current_user
     if @moto.save
-      redirect_to moto_path(@moto)
+      redirect_to motos_path
     else
       render :new
     end

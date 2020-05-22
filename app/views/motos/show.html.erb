@@ -4,7 +4,7 @@
 
           <div class="col">
            <p class="brand-tag"><%= @moto.brand%> <%= @moto.model%></p>
-           <p class="price-tag"><%= @moto.price_per_day%> €/day</p>
+           <p class="price-tag" data-price="<%= @moto.price_per_day %>"><%= @moto.price_per_day%> €/day</p>
             <% if @moto.photo.attached? %>
               <%= cl_image_tag @moto.photo.key, crop: :fill, class: "show-photo" %>
             <% else %>
@@ -31,6 +31,8 @@
       <div class="mx-auto">
         <div class="rent-form-container">
           <%= render 'rents/new' %>
+        </div>
+        <div class ="show-booking-price">
         </div>
       </div>
 

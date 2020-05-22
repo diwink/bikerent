@@ -1,6 +1,6 @@
 <div class="show-container">
 
-  <div class="row justify-content-between">
+  <div class="row justify-content-between mt-3">
 
           <div class="col">
            <p class="brand-tag"><%= @moto.brand%> <%= @moto.model%></p>
@@ -10,7 +10,7 @@
             <% else %>
               <p>No pic!</p>
             <% end %>
-            <p><%= @moto.description%></p>
+            <p class="mt-2"><%= @moto.description%></p>
             <%= link_to "Back to available Motos", motos_path, class: "btn btn-outline-primary" %>
           </div>
 
@@ -25,7 +25,7 @@
     <div class="book-info col mt-3">
 
       <div class="profil">
-        <h2>Renter Profile</h2>
+        <h2>Book me</h2>
       </div>
 
       <div class="mx-auto">

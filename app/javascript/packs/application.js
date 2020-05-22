@@ -35,4 +35,29 @@ document.addEventListener('turbolinks:load', () => {
   flatPickrInit();
   // Call your functions here, e.g:
   // initSelect2();
+
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
